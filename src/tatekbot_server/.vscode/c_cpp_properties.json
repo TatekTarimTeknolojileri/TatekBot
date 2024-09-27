@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/tatek/tatekbot_ws/install/tatekbot_action_interfaces/include/**",
+        "/home/tatek/nav2_ws/install/nav2_straightline_planner/include/**",
+        "/opt/vulcanexus/humble/include/**",
+        "/home/tatek/robot_ws/install/gazebo_map_creator_interface/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/tatek/tatekbot_ws/src/tatekbot_action_interfaces/include/**",
+        "/home/tatek/tatekbot_ws/src/tatekbot_control/include/**",
+        "/home/tatek/tatekbot_ws/src/tatekbot_description/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

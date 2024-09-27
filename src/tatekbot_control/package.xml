@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>tatekbot_control</name>
+  <version>0.0.1</version>
+  <description>The tatekbot_control package</description>
+  <maintainer email="your_email@example.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+ 
+  <depend>rclpy</depend>
+  <depend>rclcpp</depend>
+  <depend>controller_manager</depend>
+  <depend>gazebo_ros</depend>
+  <depend>tatekbot_description</depend>
+   <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

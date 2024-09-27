@@ -1,0 +1,15 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/tatek/farm_ws/install/virtual_maize_field/lib/python3.10/site-packages",
+        "/home/tatek/tatek_ws/install/tatek_start/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/tatek/farm_ws/install/virtual_maize_field/lib/python3.10/site-packages",
+        "/home/tatek/tatek_ws/install/tatek_start/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.typeCheckingMode": "basic"
+}

@@ -1,0 +1,24 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/tatek/tatekbot_ws/install/tatekbot_server/lib/python3.10/site-packages",
+        "/home/tatek/tatekbot_ws/install/tatekbot_client/lib/python3.10/site-packages",
+        "/home/tatek/tatekbot_ws/install/tatekbot_action_interfaces/local/lib/python3.10/dist-packages",
+        "/home/tatek/nav2_ws/install/nav2_gps_waypoint_follower_demo/lib/python3.10/site-packages",
+        "/opt/vulcanexus/humble/local/lib/python3.10/dist-packages",
+        "/opt/vulcanexus/humble/lib/python3.10/site-packages",
+        "/home/tatek/robot_ws/install/gazebo_map_creator_interface/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/tatek/tatekbot_ws/install/tatekbot_server/lib/python3.10/site-packages",
+        "/home/tatek/tatekbot_ws/install/tatekbot_client/lib/python3.10/site-packages",
+        "/home/tatek/tatekbot_ws/install/tatekbot_action_interfaces/local/lib/python3.10/dist-packages",
+        "/home/tatek/nav2_ws/install/nav2_gps_waypoint_follower_demo/lib/python3.10/site-packages",
+        "/opt/vulcanexus/humble/local/lib/python3.10/dist-packages",
+        "/opt/vulcanexus/humble/lib/python3.10/site-packages",
+        "/home/tatek/robot_ws/install/gazebo_map_creator_interface/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

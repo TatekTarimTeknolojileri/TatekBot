@@ -1,0 +1,863 @@
+<?xml version="1.0" ?>
+
+<robot
+  name="tatekbot_description"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <link name="base_footprint"/>
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0 0 +0.46238" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+  
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000518652660689186 -0.000775645478601898 -0.0593380908238706"
+        rpy="0 0 0" />
+      <mass
+        value="21.8072569337608" />
+      <inertia
+        ixx="0.752760665186851"
+        ixy="7.00638006723647E-17"
+        ixz="-8.14532165071712E-16"
+        iyy="0.141767863749843"
+        iyz="4.96982125316874E-07"
+        izz="0.867610976233939" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  
+  
+  
+  <link
+    name="FL_steering">
+    <inertial>
+      <origin
+        xyz="0.000306927436334037 5.45864765409965E-05 0.113797640252588"
+        rpy="0 0 0" />
+      <mass
+        value="0.599203456754256" />
+      <inertia
+        ixx="0.00274345808531708"
+        ixy="6.62647633190201E-07"
+        ixz="-1.58552289010221E-05"
+        iyy="0.00273984830141923"
+        iyz="-2.81999204758614E-06"
+        izz="0.000250811666957307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FL_steering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FL_steering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_steering_joint"
+    type="revolute">
+    <origin
+      xyz="0.3925 -0.55 -0.1435"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="FL_steering" />
+    <axis
+      xyz="0 0 1" />
+      <limit effort="5" lower="-2.1" upper="2.1" velocity="6.28"/>
+  </joint>
+  <link
+    name="FL_motor">
+    <inertial>
+      <origin
+        xyz="-0.0435295543800994 -0.00773883819981702 1.69865441068673E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.303595216149176" />
+      <inertia
+        ixx="0.00264599874973947"
+        ixy="0.000215643543587436"
+        ixz="7.52490503353301E-09"
+        iyy="0.00147163671312369"
+        iyz="-3.94482332418378E-08"
+        izz="0.00143328312383853" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FL_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FL_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_motor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0157528870051207 -0.00280116957785803 0.199999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="FL_steering" />
+    <child
+      link="FL_motor" />
+    <axis
+      xyz="0.984555437819941 0.175073098616506 0" />
+  </joint>
+  <link
+    name="FR_steering">
+    <inertial>
+      <origin
+        xyz="-0.000311743700049161 -8.67498028966907E-09 0.113797640252587"
+        rpy="0 0 0" />
+      <mass
+        value="0.599203456754256" />
+      <inertia
+        ixx="0.00274357588335808"
+        ixy="-1.88907357072766E-10"
+        ixz="1.61040565782224E-05"
+        iyy="0.00273973050337822"
+        iyz="6.14452080105636E-10"
+        izz="0.000250811666957306" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FR_steering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FR_steering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_steering_joint"
+    type="revolute">
+    <origin
+      xyz="-0.392499999999999 -0.544 -0.143500000000003"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="FR_steering" />
+    <axis
+      xyz="0 0 1" />
+      <limit effort="5" lower="-2.1" upper="2.1" velocity="6.28"/>
+  </joint>
+  <link
+    name="FR_motor">
+    <inertial>
+      <origin
+        xyz="0.0442121227498154 -1.97417164238267E-06 1.16480098488747E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.303595214625693" />
+      <inertia
+        ixx="0.00268434444476488"
+        ixy="6.54189260951298E-10"
+        ixz="-3.22975425450243E-10"
+        iyy="0.00143326749207612"
+        iyz="3.52870553449935E-08"
+        izz="0.00143330662382437" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FR_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/FR_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_motor_joint"
+    type="continuous">
+    <origin
+      xyz="0.016 0 0.2"
+      rpy="0 0 0" />
+    <parent
+      link="FR_steering" />
+    <child
+      link="FR_motor" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BL_steering">
+    <inertial>
+      <origin
+        xyz="0.000311548972747822 -1.10169039446717E-05 0.113797640252588"
+        rpy="0 0 0" />
+      <mass
+        value="0.599203456754256" />
+      <inertia
+        ixx="0.00274357105999093"
+        ixy="-1.3610455656296E-07"
+        ixz="-1.60940032375156E-05"
+        iyy="0.00273973532674538"
+        iyz="5.68945026309489E-07"
+        izz="0.000250811666957307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BL_steering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BL_steering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_steering_joint"
+    type="revolute">
+    <origin
+      xyz="0.392500000000001 0.544 -0.143499999999997"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="BL_steering" />
+    <axis
+      xyz="0 0 1" />
+      <limit effort="5" lower="-2.1" upper="2.1" velocity="6.28"/>
+  </joint>
+  <link
+    name="BL_motor">
+    <inertial>
+      <origin
+        xyz="-0.0441843815005847 0.0015659449072718 2.61163702330869E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.303595215374038" />
+      <inertia
+        ixx="0.00268277956426894"
+        ixy="-4.42196655889076E-05"
+        ixz="-2.92611019550186E-10"
+        iyy="0.00143481263647894"
+        iyz="-9.07407208868873E-09"
+        izz="0.00143332637619582" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BL_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BL_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_motor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0159899900279219 0.000565878880215975 0.20000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="BL_steering" />
+    <child
+      link="BL_motor" />
+    <axis
+      xyz="0.999374376744869 0.0353674300141312 0" />
+  </joint>
+  <link
+    name="BR_steering">
+    <inertial>
+      <origin
+        xyz="-0.000310683021616853 -2.56942545445726E-05 0.113797640252588"
+        rpy="0 0 0" />
+      <mass
+        value="0.599203456754256" />
+      <inertia
+        ixx="0.00274354980938582"
+        ixy="3.15570142144654E-07"
+        ixz="1.60492503425337E-05"
+        iyy="0.00273975657735049"
+        iyz="1.32747960240993E-06"
+        izz="0.000250811666957307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BR_steering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BR_steering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_steering_joint"
+    type="revolute">
+    <origin
+      xyz="-0.392500000000073 0.543999999999927 -0.143500000000003"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="BR_steering" />
+    <axis
+      xyz="0 0 1" />
+      <limit effort="5" lower="-2.1" upper="2.1" velocity="6.28"/>
+  </joint>
+  <link
+    name="BR_motor">
+    <inertial>
+      <origin
+        xyz="0.0440616067477624 0.00364505865276199 2.21437979397443E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.303595216951833" />
+      <inertia
+        ixx="0.00267585130966918"
+        ixy="0.000102730877700037"
+        ixz="5.20431881198127E-10"
+        iyy="0.00144174064808294"
+        iyz="-7.81484246383013E-09"
+        izz="0.00143332665026872" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BR_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/BR_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_motor_joint"
+    type="continuous">
+    <origin
+      xyz="0.015946 0.0013183 0.2"
+      rpy="0 0 0" />
+    <parent
+      link="BR_steering" />
+    <child
+      link="BR_motor" />
+    <axis
+      xyz="0.9966 0.082393 0" />
+  </joint>
+  <link
+    name="front_camera">
+    <inertial>
+      <origin
+        xyz="-0.00062633784228168 -0.00671396326715479 0.00141257300360941"
+        rpy="0 0 0" />
+      <mass
+        value="0.150745908742073" />
+      <inertia
+        ixx="1.4988622949799E-05"
+        ixy="7.806173659449E-07"
+        ixz="-3.47096589835581E-07"
+        iyy="0.00010022291542895"
+        iyz="1.82861104708394E-06"
+        izz="0.000102534357522401" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/front_camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/front_camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_camera_joint"
+    type="fixed">
+    <origin
+      xyz="-0.037644 -0.62923 0.038977"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_cam">
+    <inertial>
+      <origin
+        xyz="0.00671396331753293 -0.00062633708021254 0.00141257307903595"
+        rpy="0 0 0" />
+      <mass
+        value="0.150745909478671" />
+      <inertia
+        ixx="0.000100222916689929"
+        ixy="-7.80619194966857E-07"
+        ixz="-1.82861124743229E-06"
+        iyy="1.49886230924386E-05"
+        iyz="-3.4709697927305E-07"
+        izz="0.000102534358818684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/right_cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/right_cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_cam_joint"
+    type="fixed">
+    <origin
+      xyz="-0.44923 0.0030343 0.038313"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_cam">
+    <inertial>
+      <origin
+        xyz="-0.00671396342681402 0.000626337364241906 0.00141257306866813"
+        rpy="0 0 0" />
+      <mass
+        value="0.150745910590539" />
+      <inertia
+        ixx="0.000100222918221575"
+        ixy="-7.80618472321872E-07"
+        ixz="1.82861124321354E-06"
+        iyy="1.49886233314642E-05"
+        iyz="3.47096998827085E-07"
+        izz="0.000102534360728098" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/left_cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/left_cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_cam_joint"
+    type="fixed">
+    <origin
+      xyz="0.44923 -0.0013151 0.038313"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="back_cam">
+    <inertial>
+      <origin
+        xyz="0.000626337842281888 0.00671396326715479 0.00141257300360944"
+        rpy="0 0 0" />
+      <mass
+        value="0.150745908742074" />
+      <inertia
+        ixx="1.49886229497991E-05"
+        ixy="7.80617365944793E-07"
+        ixz="3.4709658983552E-07"
+        iyy="0.00010022291542895"
+        iyz="-1.82861104708398E-06"
+        izz="0.000102534357522401" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/back_cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/back_cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_cam_joint"
+    type="fixed">
+    <origin
+      xyz="0.056705 0.62923 0.055813"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bottom_cam">
+    <inertial>
+      <origin
+        xyz="-3.18269220265761E-19 1.23568595746274E-20 0.0115"
+        rpy="0 0 0" />
+      <mass
+        value="0.0221285932537231" />
+      <inertia
+        ixx="2.66972257358981E-06"
+        ixy="1.21760986167806E-22"
+        ixz="9.37330799113925E-39"
+        iyy="2.66972257358981E-06"
+        iyz="2.02934976946343E-23"
+        izz="3.38844084197635E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/bottom_cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tatekbot_description/meshes/bottom_cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bottom_cam_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.045"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="bottom_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+
+  
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    
+    <joint name="FL_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="FR_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="BL_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="BR_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="FL_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="FR_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="BL_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="BR_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </ros2_control>
+  
+  <gazebo reference="back_cam_joint">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="front_camera_joint">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="left_cam_joint">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="bottom_cam_joint">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="right_cam_joint">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+
+  <!-- sensors -->
+
+
+
+</robot>

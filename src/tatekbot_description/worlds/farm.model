@@ -1,0 +1,4590 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='mud_box_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+      <pose>1.90734 4.83104 0 0 -0 0</pose>
+    </model>
+    <model name='mud_box_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+      <pose>1.85975 -5.14192 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>3440 19000000</sim_time>
+      <real_time>389 213189184</real_time>
+      <wall_time>1726047074 354584742</wall_time>
+      <iterations>388679</iterations>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_0'>
+        <pose>1.86767 4.83104 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.86767 4.83104 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_0_clone'>
+        <pose>9.85757 -5.14216 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.85757 -5.14216 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_2'>
+        <pose>1.85975 -5.14192 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.85975 -5.14192 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_4'>
+        <pose>9.86465 4.85433 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.86465 4.85433 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01'>
+        <pose>1.56956 4.09405 0.1 -1e-05 3.9e-05 0.003181</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.56956 4.09405 0.1 -1e-05 3.9e-05 0.003181</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.083496 -0.08428 -0.372397 -1.01001 -1.06344 -3.08106</acceleration>
+          <wrench>-0.025049 -0.025284 -0.111719 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_0'>
+        <pose>1.8152 4.00895 0.1 9e-06 -2e-06 0.003222</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.8152 4.00895 0.1 9e-06 -2e-06 0.003222</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.090346 0.090931 0.396378 0.323199 0.381599 3.11508</acceleration>
+          <wrench>0.027104 0.027279 0.118913 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_1'>
+        <pose>2.22831 3.96771 0.1 0 -4e-06 0.003019</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.22831 3.96771 0.1 0 -4e-06 0.003019</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.086613 -0.010461 -0.057785 -2.21286 -0.759214 3.14093</acceleration>
+          <wrench>-0.025984 -0.003138 -0.017335 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_10'>
+        <pose>5.32979 4.4766 0.1 -1.4e-05 2e-06 0.002442</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.32979 4.4766 0.1 -1.4e-05 2e-06 0.002442</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.091564 -0.090527 0.274952 -0.483386 0.440228 3.04766</acceleration>
+          <wrench>0.027469 -0.027158 0.082485 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_11'>
+        <pose>5.74644 4.52743 0.09999 6e-06 1.7e-05 0.002519</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.74644 4.52743 0.09999 6e-06 1.7e-05 0.002519</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_12'>
+        <pose>6.42686 4.52412 0.1 -2e-05 2.5e-05 0.002339</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.42686 4.52412 0.1 -2e-05 2.5e-05 0.002339</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.096642 -0.097086 1.09254 0.289612 0.244222 -3.12153</acceleration>
+          <wrench>-0.028993 -0.029126 0.327761 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_13'>
+        <pose>6.68705 4.50605 0.1 7e-06 -2e-05 0.002328</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.68705 4.50605 0.1 7e-06 -2e-05 0.002328</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.086563 0.087091 -0.036331 0.717224 0.757707 -3.11242</acceleration>
+          <wrench>0.025969 0.026127 -0.010899 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_14'>
+        <pose>6.96185 4.54938 0.099991 4.3e-05 -1e-06 0.002245</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.96185 4.54938 0.099991 4.3e-05 -1e-06 0.002245</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 1e-06 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_15'>
+        <pose>7.7553 4.7651 0.1 6e-06 1.5e-05 0.002121</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.7553 4.7651 0.1 6e-06 1.5e-05 0.002121</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_16'>
+        <pose>8.14118 4.75759 0.09999 3e-06 2.6e-05 0.002002</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.14118 4.75759 0.09999 3e-06 2.6e-05 0.002002</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_17'>
+        <pose>8.82172 4.82295 0.09999 4e-06 -1.6e-05 0.001981</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.82172 4.82295 0.09999 4e-06 -1.6e-05 0.001981</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_18'>
+        <pose>9.06917 4.80112 0.099999 -2e-06 3e-06 0.001744</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.06917 4.80112 0.099999 -2e-06 3e-06 0.001744</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_19'>
+        <pose>9.2685 4.80875 0.099991 -5.8e-05 -0 0.001901</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.2685 4.80875 0.099991 -5.8e-05 -0 0.001901</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_2'>
+        <pose>2.75117 4.03433 0.1 0 -4.1e-05 0.003076</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.75117 4.03433 0.1 0 -4.1e-05 0.003076</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.256617 0.204352 19.1207 -1.60482 0.536056 0.158698</acceleration>
+          <wrench>0.076985 0.061306 5.73622 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_20'>
+        <pose>9.66954 4.98217 0.1 4e-06 5e-06 0.001761</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.66954 4.98217 0.1 4e-06 5e-06 0.001761</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.091263 0.089284 0.579007 0.20359 -0.17259 2.83098</acceleration>
+          <wrench>-0.027379 0.026785 0.173702 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_21'>
+        <pose>0.850737 3.89427 0.099991 -3.4e-05 1.3e-05 0.00175</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.850737 3.89427 0.099991 -3.4e-05 1.3e-05 0.00175</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_22'>
+        <pose>0.349537 3.98244 0.1 -9e-06 -2.2e-05 0.001637</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.349537 3.98244 0.1 -9e-06 -2.2e-05 0.001637</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.000405 0.000413 -9.76424 -0.031781 0.031683 -0.000856</acceleration>
+          <wrench>0.000122 0.000124 -2.92927 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_23'>
+        <pose>0.075329 4.0272 0.100001 1.1e-05 -4.8e-05 0.001569</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.075329 4.0272 0.100001 1.1e-05 -4.8e-05 0.001569</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.089103 0.089643 0.217825 0.497652 0.525834 -3.03487</acceleration>
+          <wrench>0.026731 0.026893 0.065348 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_24'>
+        <pose>-0.322788 3.86729 0.099991 1.7e-05 -4.3e-05 0.001484</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.322788 3.86729 0.099991 1.7e-05 -4.3e-05 0.001484</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_25'>
+        <pose>10.4764 4.17538 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10.4764 4.17538 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_26'>
+        <pose>10.1297 4.13424 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10.1297 4.13424 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_27'>
+        <pose>9.67047 4.11546 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.67047 4.11546 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_28'>
+        <pose>9.19511 4.13839 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.19511 4.13839 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_29'>
+        <pose>8.75619 4.03881 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.75619 4.03881 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_3'>
+        <pose>2.97317 4.09414 0.1 1.1e-05 -1.9e-05 0.00293</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.97317 4.09414 0.1 1.1e-05 -1.9e-05 0.00293</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 -2e-06 -1e-06 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_30'>
+        <pose>8.21707 3.98135 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.21707 3.98135 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_31'>
+        <pose>7.3747 3.86574 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.3747 3.86574 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_32'>
+        <pose>7.07349 3.79894 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.07349 3.79894 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_4'>
+        <pose>3.58354 4.24298 0.100001 8e-06 4.5e-05 0.00295</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.58354 4.24298 0.100001 8e-06 4.5e-05 0.00295</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.09829 0.098091 1.25275 -0.380536 0.438641 3.0875</acceleration>
+          <wrench>-0.029487 0.029427 0.375825 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_5'>
+        <pose>3.84152 4.14944 0.1 -1.1e-05 -5e-06 0.002905</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.84152 4.14944 0.1 -1.1e-05 -5e-06 0.002905</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.000614 0.000626 -9.74221 -0.051467 0.051176 -0.001112</acceleration>
+          <wrench>0.000184 0.000188 -2.92266 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_6'>
+        <pose>4.08406 4.25033 0.1 -1.4e-05 -1.7e-05 0.002598</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>4.08406 4.25033 0.1 -1.4e-05 -1.7e-05 0.002598</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.081055 0.08161 -0.68939 1.29774 1.33987 -3.08788</acceleration>
+          <wrench>0.024316 0.024483 -0.206817 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_7'>
+        <pose>4.33049 4.38128 0.1 -1.2e-05 -3.4e-05 0.002622</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>4.33049 4.38128 0.1 -1.2e-05 -3.4e-05 0.002622</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.084599 0.085181 -0.259565 0.913867 0.958417 -3.05777</acceleration>
+          <wrench>0.02538 0.025554 -0.07787 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_8'>
+        <pose>4.70243 4.47189 0.1 -1e-05 -2.3e-05 0.002649</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>4.70243 4.47189 0.1 -1e-05 -2.3e-05 0.002649</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.089153 -0.088851 0.198914 -0.551867 0.504851 3.09329</acceleration>
+          <wrench>0.026746 -0.026655 0.059674 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_01_9'>
+        <pose>5.08297 4.44211 0.099991 3e-05 6e-06 0.002557</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.08297 4.44211 0.099991 3e-05 6e-06 0.002557</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02'>
+        <pose>1.10272 3.91262 0.1 -2e-06 8e-06 0.003219</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.10272 3.91262 0.1 -2e-06 8e-06 0.003219</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.08562 -0.084995 -0.215653 -0.924533 0.869616 -3.1205</acceleration>
+          <wrench>0.025686 -0.025499 -0.064696 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_0'>
+        <pose>1.36566 3.97436 0.09999 1.9e-05 -2e-06 0.003117</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.36566 3.97436 0.09999 1.9e-05 -2e-06 0.003117</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_1'>
+        <pose>2.04458 3.95732 0.09999 -5e-06 -9e-06 0.003113</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.04458 3.95732 0.09999 -5e-06 -9e-06 0.003113</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_10'>
+        <pose>7.19839 4.59572 0.1 -1.8e-05 1.2e-05 0.002151</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.19839 4.59572 0.1 -1.8e-05 1.2e-05 0.002151</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.085761 0.085584 -0.171342 0.876056 -0.839251 3.07985</acceleration>
+          <wrench>-0.025728 0.025675 -0.051403 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_11'>
+        <pose>7.51795 4.63727 0.1 0 -0 0.002233</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.51795 4.63727 0.1 0 -0 0.002233</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.087708 -0.010396 0.064554 -2.21953 -0.64966 -3.14085</acceleration>
+          <wrench>-0.026312 -0.003119 0.019366 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_12'>
+        <pose>7.9608 4.68816 0.1 2.3e-05 9e-06 0.002186</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.9608 4.68816 0.1 2.3e-05 9e-06 0.002186</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.090822 0.091296 0.452197 0.282753 0.322586 3.07514</acceleration>
+          <wrench>0.027247 0.027389 0.135659 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_13'>
+        <pose>8.4628 4.8513 0.1 -1.4e-05 -5e-06 0.002098</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.4628 4.8513 0.1 -1.4e-05 -5e-06 0.002098</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_14'>
+        <pose>8.68724 4.87533 0.1 3.1e-05 -0 0.002054</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.68724 4.87533 0.1 3.1e-05 -0 0.002054</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.093255 0.095397 0.888468 -0.104542 -0.006842 3.11728</acceleration>
+          <wrench>0.027977 0.028619 0.26654 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_15'>
+        <pose>8.28172 4.72554 0.1 -7e-06 -1.1e-05 0.001957</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.28172 4.72554 0.1 -7e-06 -1.1e-05 0.001957</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.085186 0.084914 -0.276149 0.967705 -0.934529 -3.1331</acceleration>
+          <wrench>-0.025556 0.025474 -0.082845 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_16'>
+        <pose>9.5097 4.89672 0.100001 -2.3e-05 -6.7e-05 0.00181</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.5097 4.89672 0.100001 -2.3e-05 -6.7e-05 0.00181</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.081267 -0.081161 -0.675899 -1.32148 1.29214 3.06124</acceleration>
+          <wrench>0.02438 -0.024348 -0.20277 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_17'>
+        <pose>9.98058 4.99582 0.1 -9e-06 2.9e-05 0.001753</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.98058 4.99582 0.1 -9e-06 2.9e-05 0.001753</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.084319 0.08426 -0.448712 1.12002 -1.09083 3.08412</acceleration>
+          <wrench>-0.025296 0.025278 -0.134614 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_18'>
+        <pose>10.2911 5.03002 0.1 7e-06 -6e-06 0.001769</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10.2911 5.03002 0.1 7e-06 -6e-06 0.001769</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.086662 -0.086557 -0.283335 -0.97399 0.943932 3.14049</acceleration>
+          <wrench>0.025999 -0.025967 -0.085 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_19'>
+        <pose>0.653174 3.9251 0.099991 4.2e-05 2e-06 0.001589</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.653174 3.9251 0.099991 4.2e-05 2e-06 0.001589</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_2'>
+        <pose>2.47515 4.01205 0.09999 2.7e-05 1e-06 0.002959</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.47515 4.01205 0.09999 2.7e-05 1e-06 0.002959</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_20'>
+        <pose>0.181996 3.92138 0.099991 -2.2e-05 -1e-06 0.001587</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.181996 3.92138 0.099991 -2.2e-05 -1e-06 0.001587</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_21'>
+        <pose>-0.074126 3.7377 0.1 -8e-06 -1.2e-05 0.001567</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.074126 3.7377 0.1 -8e-06 -1.2e-05 0.001567</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.084101 -0.084312 -0.336477 -0.991351 -1.01772 3.10536</acceleration>
+          <wrench>-0.02523 -0.025294 -0.100943 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_22'>
+        <pose>10.3232 4.17827 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10.3232 4.17827 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_23'>
+        <pose>9.91448 4.11917 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.91448 4.11917 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_24'>
+        <pose>9.42671 4.12446 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.42671 4.12446 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_25'>
+        <pose>9.01977 4.09969 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.01977 4.09969 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_26'>
+        <pose>8.4909 3.98464 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.4909 3.98464 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_27'>
+        <pose>8.02111 4.00245 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.02111 4.00245 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_28'>
+        <pose>7.73218 3.87655 0.05 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.73218 3.87655 0.05 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_3'>
+        <pose>3.36401 4.01918 0.1 3e-06 8e-06 0.003017</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.36401 4.01918 0.1 3e-06 8e-06 0.003017</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_4'>
+        <pose>3.16233 4.20501 0.1 -4e-06 -2.2e-05 0.002803</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.16233 4.20501 0.1 -4e-06 -2.2e-05 0.002803</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.000146 0.000152 -9.79185 -0.007201 0.007166 -0.000864</acceleration>
+          <wrench>4.4e-05 4.6e-05 -2.93756 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_5'>
+        <pose>4.51013 4.30299 0.1 0 -1e-06 0.002702</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>4.51013 4.30299 0.1 0 -1e-06 0.002702</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.087363 -0.010436 0.026215 -2.21548 -0.684198 -3.14129</acceleration>
+          <wrench>-0.026209 -0.003131 0.007865 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_6'>
+        <pose>4.77693 4.31538 0.1 -2e-06 -3e-06 0.002523</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>4.77693 4.31538 0.1 -2e-06 -3e-06 0.002523</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.000961 0.00097 -9.69096 -0.097268 0.096781 -0.000507</acceleration>
+          <wrench>0.000288 0.000291 -2.90729 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_7'>
+        <pose>5.50039 4.49138 0.1 1.9e-05 2e-06 0.00248</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.50039 4.49138 0.1 1.9e-05 2e-06 0.00248</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.085521 0.085825 -0.17134 0.836479 0.878937 3.09853</acceleration>
+          <wrench>0.025656 0.025747 -0.051402 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_8'>
+        <pose>6.00466 4.46093 0.100001 9e-05 2.2e-05 0.002511</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.00466 4.46093 0.100001 9e-05 2.2e-05 0.002511</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.085734 0.085617 -0.171339 0.836472 0.879337 2.92257</acceleration>
+          <wrench>0.02572 0.025685 -0.051402 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='patato_02_9'>
+        <pose>6.21908 4.46662 0.099999 5e-06 5e-06 0.002316</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.21908 4.46662 0.099999 5e-06 5e-06 0.002316</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 1e-06 -4e-06 0</acceleration>
+          <wrench>0 0 -2.94 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-6.73454 -5.98743 39.9428 0 1.1258 0.172514</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='mud_box_0_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+      <pose>9.81681 -5.15165 0 0 -0 0</pose>
+    </model>
+    <model name='mud_box_4'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+      <pose>9.86465 4.85433 0 0 -0 0</pose>
+    </model>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <model name='patato_02'>
+      <pose>1.1027 3.91316 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_0'>
+      <pose>1.36565 3.9749 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01'>
+      <pose>1.56955 4.09458 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_0'>
+      <pose>1.81519 4.00949 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_1'>
+      <pose>2.04457 3.95786 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_1'>
+      <pose>2.2283 3.96824 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_2'>
+      <pose>2.47514 4.01258 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_2'>
+      <pose>2.75116 4.03487 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_3'>
+      <pose>2.97316 4.09467 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_3'>
+      <pose>3.364 4.01971 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_4'>
+      <pose>3.16233 4.20554 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_4'>
+      <pose>3.58354 4.24352 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_5'>
+      <pose>3.84151 4.14997 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_6'>
+      <pose>4.08406 4.25086 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_7'>
+      <pose>4.33049 4.38181 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_5'>
+      <pose>4.51013 4.30352 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_8'>
+      <pose>4.70243 4.47242 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_6'>
+      <pose>4.77693 4.31591 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_9'>
+      <pose>5.08297 4.44264 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_10'>
+      <pose>5.32979 4.47713 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_7'>
+      <pose>5.50039 4.49191 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_11'>
+      <pose>5.74644 4.52796 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_8'>
+      <pose>6.00466 4.46146 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_9'>
+      <pose>6.21908 4.46715 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_12'>
+      <pose>6.42686 4.52465 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_13'>
+      <pose>6.68705 4.50658 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_14'>
+      <pose>6.96185 4.54991 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_10'>
+      <pose>7.1984 4.59625 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_11'>
+      <pose>7.51796 4.6378 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_15'>
+      <pose>7.75531 4.76563 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_12'>
+      <pose>7.96081 4.68869 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_13'>
+      <pose>8.46281 4.85183 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_14'>
+      <pose>8.68725 4.87586 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_16'>
+      <pose>8.14119 4.75812 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_15'>
+      <pose>8.28173 4.72607 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_17'>
+      <pose>8.82173 4.82348 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_18'>
+      <pose>9.06918 4.80165 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_19'>
+      <pose>9.26851 4.80928 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_16'>
+      <pose>9.50971 4.89725 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_20'>
+      <pose>9.66955 4.9827 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_17'>
+      <pose>9.9806 4.99635 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_18'>
+      <pose>10.2911 5.03055 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_21'>
+      <pose>0.850755 3.8948 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_19'>
+      <pose>0.653194 3.92563 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_22'>
+      <pose>0.349557 3.98297 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_20'>
+      <pose>0.182016 3.92191 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_23'>
+      <pose>0.07535 4.02772 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_21'>
+      <pose>-0.074103 3.73822 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_24'>
+      <pose>-0.322766 3.86781 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_25'>
+      <pose>10.4764 4.17538 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_22'>
+      <static>1</static>
+      <pose>10.3232 4.17827 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_26'>
+      <pose>10.1297 4.13424 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_23'>
+      <static>1</static>
+      <pose>9.91448 4.11917 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_27'>
+      <pose>9.67047 4.11546 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_24'>
+      <static>1</static>
+      <pose>9.42671 4.12446 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_28'>
+      <pose>9.19511 4.13839 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_25'>
+      <static>1</static>
+      <pose>9.01977 4.09969 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_29'>
+      <pose>8.75619 4.03881 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_26'>
+      <static>1</static>
+      <pose>8.4909 3.98464 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_30'>
+      <pose>8.21707 3.98135 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_27'>
+      <static>1</static>
+      <pose>8.02111 4.00245 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_02_28'>
+      <static>1</static>
+      <pose>7.73218 3.87655 0.05 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_02/patato_02.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_31'>
+      <pose>7.3747 3.86574 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='patato_01_32'>
+      <pose>7.07349 3.79894 0.05 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <mass>0.3</mass>
+          <inertia>
+            <ixx>0.00334167</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00334167</iyy>
+            <iyz>0</iyz>
+            <izz>1.66667e-05</izz>
+          </inertia>
+          <pose>0 0 0.1 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.4</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://patato_01/patato_01.dae</uri>
+              <scale>15 15 15</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    
+     <include>
+      <uri>model://tatekbot</uri>
+      <pose>11.04 4.7 0.1 0 0 -1.570</pose>
+      <static>false</static>
+    </include>
+
+  </world>
+</sdf>

@@ -1,0 +1,1001 @@
+<sdf version='1.7'>
+  <model name='tatekbot'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>0.000519 -0.000776 0.403042 0 -0 0</pose>
+        <mass>21.8073</mass>
+        <inertia>
+          <ixx>0.752761</ixx>
+          <ixy>7.00632e-17</ixy>
+          <ixz>-8.13585e-16</ixz>
+          <iyy>0.141768</iyy>
+          <iyz>4.96982e-07</iyz>
+          <izz>0.867611</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+        <pose>0 0 0.46238 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0.46238 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='BL_steering_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.3925 0.544 0.31888 3.14159 -0 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>BL_steering</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+          <effort>5</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='BL_steering'>
+      <pose relative_to='BL_steering_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000312 -1.1e-05 0.113798 0 -0 0</pose>
+        <mass>0.599203</mass>
+        <inertia>
+          <ixx>0.00274357</ixx>
+          <ixy>-1.36105e-07</ixy>
+          <ixz>-1.6094e-05</ixz>
+          <iyy>0.00273974</iyy>
+          <iyz>5.68945e-07</iyz>
+          <izz>0.000250812</izz>
+        </inertia>
+      </inertial>
+      <collision name='BL_steering_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BL_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='BL_steering_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BL_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='BL_motor_joint' type='revolute'>
+      <pose relative_to='BL_steering'>-0.01599 0.000566 0.2 0 -0 0</pose>
+      <parent>BL_steering</parent>
+      <child>BL_motor</child>
+      <axis>
+        <xyz>0.999374 0.035367 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='BL_motor'>
+      <pose relative_to='BL_motor_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.044184 0.001566 0 0 -0 0</pose>
+        <mass>0.303595</mass>
+        <inertia>
+          <ixx>0.00268278</ixx>
+          <ixy>-4.42197e-05</ixy>
+          <ixz>-2.92611e-10</ixz>
+          <iyy>0.00143481</iyy>
+          <iyz>-9.07407e-09</iyz>
+          <izz>0.00143333</izz>
+        </inertia>
+      </inertial>
+      <collision name='BL_motor_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BL_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='BL_motor_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BL_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+            <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </link>
+    <joint name='BR_steering_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.3925 0.544 0.31888 3.14159 -0 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>BR_steering</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+          <effort>5</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='BR_steering'>
+      <pose relative_to='BR_steering_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000311 -2.6e-05 0.113798 0 -0 0</pose>
+        <mass>0.599203</mass>
+        <inertia>
+          <ixx>0.00274355</ixx>
+          <ixy>3.1557e-07</ixy>
+          <ixz>1.60493e-05</ixz>
+          <iyy>0.00273976</iyy>
+          <iyz>1.32748e-06</iyz>
+          <izz>0.000250812</izz>
+        </inertia>
+      </inertial>
+      <collision name='BR_steering_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BR_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='BR_steering_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BR_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='BR_motor_joint' type='revolute'>
+      <pose relative_to='BR_steering'>0.015946 0.001318 0.2 0 -0 0</pose>
+      <parent>BR_steering</parent>
+      <child>BR_motor</child>
+      <axis>
+        <xyz>0.9966 0.082393 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='BR_motor'>
+      <pose relative_to='BR_motor_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.044062 0.003645 0 0 -0 0</pose>
+        <mass>0.303595</mass>
+        <inertia>
+          <ixx>0.00267585</ixx>
+          <ixy>0.000102731</ixy>
+          <ixz>5.20432e-10</ixz>
+          <iyy>0.00144174</iyy>
+          <iyz>-7.81484e-09</iyz>
+          <izz>0.00143333</izz>
+        </inertia>
+      </inertial>
+      <collision name='BR_motor_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BR_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='BR_motor_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/BR_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+            <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </link>
+    <joint name='FL_steering_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.3925 -0.55 0.31888 -3.14159 -0 -3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>FL_steering</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+          <effort>5</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='FL_steering'>
+      <pose relative_to='FL_steering_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000307 5.5e-05 0.113798 0 -0 0</pose>
+        <mass>0.599203</mass>
+        <inertia>
+          <ixx>0.00274346</ixx>
+          <ixy>6.62648e-07</ixy>
+          <ixz>-1.58552e-05</ixz>
+          <iyy>0.00273985</iyy>
+          <iyz>-2.81999e-06</iyz>
+          <izz>0.000250812</izz>
+        </inertia>
+      </inertial>
+      <collision name='FL_steering_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FL_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='FL_steering_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FL_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='FL_motor_joint' type='revolute'>
+      <pose relative_to='FL_steering'>-0.015753 -0.002801 0.2 0 -0 0</pose>
+      <parent>FL_steering</parent>
+      <child>FL_motor</child>
+      <axis>
+        <xyz>0.984555 0.175073 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='FL_motor'>
+      <pose relative_to='FL_motor_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.04353 -0.007739 2e-06 0 -0 0</pose>
+        <mass>0.303595</mass>
+        <inertia>
+          <ixx>0.002646</ixx>
+          <ixy>0.000215644</ixy>
+          <ixz>7.52491e-09</ixz>
+          <iyy>0.00147164</iyy>
+          <iyz>-3.94482e-08</iyz>
+          <izz>0.00143328</izz>
+        </inertia>
+      </inertial>
+      <collision name='FL_motor_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FL_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='FL_motor_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FL_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+            <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </link>
+    <joint name='FR_steering_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.3925 -0.544 0.31888 3.14159 -0 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>FR_steering</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+          <effort>5</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='FR_steering'>
+      <pose relative_to='FR_steering_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000312 -0 0.113798 0 -0 0</pose>
+        <mass>0.599203</mass>
+        <inertia>
+          <ixx>0.00274358</ixx>
+          <ixy>-1.88907e-10</ixy>
+          <ixz>1.61041e-05</ixz>
+          <iyy>0.00273973</iyy>
+          <iyz>6.14452e-10</iyz>
+          <izz>0.000250812</izz>
+        </inertia>
+      </inertial>
+      <collision name='FR_steering_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FR_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='FR_steering_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FR_steering.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='FR_motor_joint' type='revolute'>
+      <pose relative_to='FR_steering'>0.016 0 0.2 0 -0 0</pose>
+      <parent>FR_steering</parent>
+      <child>FR_motor</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='FR_motor'>
+      <pose relative_to='FR_motor_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.044212 -2e-06 1e-06 0 -0 0</pose>
+        <mass>0.303595</mass>
+        <inertia>
+          <ixx>0.00268434</ixx>
+          <ixy>6.54189e-10</ixy>
+          <ixz>-3.22975e-10</ixz>
+          <iyy>0.00143327</iyy>
+          <iyz>3.52871e-08</iyz>
+          <izz>0.00143331</izz>
+        </inertia>
+      </inertial>
+      <collision name='FR_motor_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FR_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='FR_motor_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/FR_motor.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+            <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+    </link>
+    <joint name='back_cam_joint' type='fixed'>
+      <pose relative_to='base_footprint'>0.056705 0.62923 0.518193 -3.14159 -0 -3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>back_cam</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='back_cam'>
+      <pose relative_to='back_cam_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000626 0.006714 0.001413 0 -0 0</pose>
+        <mass>0.150746</mass>
+        <inertia>
+          <ixx>1.49886e-05</ixx>
+          <ixy>7.80617e-07</ixy>
+          <ixz>3.47097e-07</ixz>
+          <iyy>0.000100223</iyy>
+          <iyz>-1.82861e-06</iyz>
+          <izz>0.000102534</izz>
+        </inertia>
+      </inertial>
+      <collision name='back_cam_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/back_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='back_cam_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/back_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='bottom_cam_joint' type='fixed'>
+      <pose relative_to='base_footprint'>0 0 0.41738 -3.14159 -0 -3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>bottom_cam</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='bottom_cam'>
+      <pose relative_to='bottom_cam_joint'>0 0 0.0115 0 -1.5708 0</pose>
+      <inertial>
+        <pose>-0 0 0.0115 0 1.5708 0</pose> 
+        <mass>0.0221286</mass>
+        <inertia>
+          <ixx>2.66972e-06</ixx>
+          <ixy>1.21761e-22</ixy>
+          <ixz>9.37331e-39</ixz>
+          <iyy>2.66972e-06</iyy>
+          <iyz>2.02935e-23</iyz>
+          <izz>3.38844e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='bottom_cam_collision'>
+        <pose>-0 0 0.0115 0 -1.5708 0</pose> 
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/bottom_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='bottom_cam_visual'>
+        <pose>-0 0 0.0115 0 -1.5708 0</pose> 
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/bottom_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+
+      <sensor type='camera' name='bottom_cam'>
+    <always_on>true</always_on>
+    
+    <visualize>1</visualize>
+    <update_rate>15.0</update_rate>
+    <camera name='bottom'>
+      <horizontal_fov>1.46608</horizontal_fov>
+      <image>
+        <width>540</width>
+        <height>405</height>
+        <format>R8G8B8</format>
+      </image>
+      <distortion>
+        <k1>0.0</k1>
+        <k2>0.0</k2>
+        <k3>0.0</k3>
+        <p1>0.0</p1>
+        <p2>0.0</p2>
+        <center>0.5 0.5</center>
+      </distortion>
+    </camera>
+    <plugin name='gazebo_ros_camera' filename='libgazebo_ros_camera.so'>
+      <ros>
+        <remapping>~/image_raw:=image_raw</remapping>
+        <remapping>~/camera_info:=camera_info</remapping>
+      </ros>
+      <camera_name>bottom</camera_name>
+      <frame_name>bottom</frame_name>
+      <hack_baseline>0.2</hack_baseline>
+    </plugin>
+  </sensor>
+
+    </link>
+    <joint name='front_camera_joint' type='fixed'>
+      <pose relative_to='base_footprint'>-0.037644 -0.62923 0.501357 -3.14159 -0 -3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>front_camera</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_camera'>
+      <pose relative_to='front_camera_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000626 -0.006714 0.001413 0 -0 0</pose>
+        <mass>0.150746</mass>
+        <inertia>
+          <ixx>1.49886e-05</ixx>
+          <ixy>7.80617e-07</ixy>
+          <ixz>-3.47097e-07</ixz>
+          <iyy>0.000100223</iyy>
+          <iyz>1.82861e-06</iyz>
+          <izz>0.000102534</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_camera_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/front_camera.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='front_camera_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/front_camera.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      
+   
+      <sensor name="intel_realsense_r200_depth" type="depth">
+        <always_on>1</always_on>
+        <update_rate>1</update_rate>
+        <pose>-0.069 -0.3 -0.404 3.14159 -1.1 -1.570795</pose>
+        <camera name="realsense_depth_camera">
+        </camera>
+        <horizontal_fov>1.794</horizontal_fov>
+	<plugin name="intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
+            <ros>
+        <!-- 
+              <argument>custom_camera/image_raw:=custom_camera/custom_image</argument>
+              <argument>custom_camera/image_depth:=custom_camera/custom_image_depth</argument>
+              <argument>custom_camera/camera_info:=custom_camera/custom_info_raw</argument>
+              <argument>custom_camera/camera_info_depth:=custom_camera/custom_info_depth</argument>
+              <argument>custom_camera/points:=custom_camera/custom_points</argument> 
+        -->
+            </ros>
+            <camera_name>intel_realsense_r200_depth</camera_name>
+            <frame_name>realsense_depth_frame</frame_name>
+            <hack_baseline>0.07</hack_baseline>
+            <min_depth>0.001</min_depth>
+          </plugin>
+      </sensor>
+
+      <sensor name="intel_realsense_r200_rgb" type="camera">
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <update_rate>30</update_rate>
+	<pose>-0.069 -0.3 -0.404 3.14159 -1.1 -1.570795</pose>
+        <camera name="realsense_rgb_camera">
+          <horizontal_fov>1.794</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>10</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+          <plugin name="intel_realsense_r200_rgb_driver" filename="libgazebo_ros_camera.so">
+            <ros>
+            <!--
+              <namespace>custom_ns</namespace>
+              <argument>image_raw:=custom_image</argument>
+              <argument>camera_info:=custom_info_raw</argument> 
+            -->
+            </ros>
+            <camera_name>intel_realsense_r200_rgb</camera_name>
+            <frame_name>realsense_rgb_frame</frame_name>
+            <hack_baseline>0.07</hack_baseline>
+          </plugin>
+      </sensor>
+
+</link>
+
+
+    <joint name='left_cam_joint' type='fixed'>
+      <pose relative_to='base_footprint'>0.44923 -0.001315 0.500693 -3.14159 -0 -3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>left_cam</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_cam'>
+      <pose relative_to='left_cam_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.006714 0.000626 0.001413 0 -0 0</pose>
+        <mass>0.150746</mass>
+        <inertia>
+          <ixx>0.000100223</ixx>
+          <ixy>-7.80618e-07</ixy>
+          <ixz>1.82861e-06</ixz>
+          <iyy>1.49886e-05</iyy>
+          <iyz>3.47097e-07</iyz>
+          <izz>0.000102534</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_cam_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/left_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_cam_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/left_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='right_cam_joint' type='fixed'>
+      <pose relative_to='base_footprint'>-0.44923 0.003034 0.500693 -3.14159 -0 -3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>right_cam</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_cam'>
+      <pose relative_to='right_cam_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.006714 -0.000626 0.001413 0 -0 0</pose>
+        <mass>0.150746</mass>
+        <inertia>
+          <ixx>0.000100223</ixx>
+          <ixy>-7.80619e-07</ixy>
+          <ixz>-1.82861e-06</ixz>
+          <iyy>1.49886e-05</iyy>
+          <iyz>-3.47097e-07</iyz>
+          <izz>0.000102534</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_cam_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/right_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_cam_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tatekbot/meshes/right_cam.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    
+    
+    
+    
+    <static>0</static>
+  
+  
+    <plugin name="four_ws_robot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+          <remapping>~/out:=joint_states</remapping>
+      </ros>
+      <update_rate>30</update_rate>
+      <joint_name>FL_motor_joint</joint_name>
+      <joint_name>FR_motor_joint</joint_name>
+      <joint_name>BL_motor_joint</joint_name>
+      <joint_name>BR_motor_joint</joint_name>
+      <joint_name>FL_steering_joint</joint_name>
+      <joint_name>FR_steering_joint</joint_name>
+      <joint_name>BL_steering_joint</joint_name>
+      <joint_name>BR_steering_joint</joint_name>
+    </plugin>
+
+    
+    
+    <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    
+    <joint name="FL_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <state_interface name="position"/> 
+    </joint>
+
+    <joint name="FR_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <state_interface name="position"/> 
+    </joint>
+
+    <joint name="BL_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <state_interface name="position"/> 
+    </joint>
+
+    <joint name="BR_motor_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <state_interface name="position"/> 
+    </joint>
+
+    <joint name="FL_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="position"/> 
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="FR_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="position"/> 
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="BL_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="position"/> 
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="BR_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="position"/> 
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </ros2_control>
+
+  <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+    <parameters>/home/tatek/tatekbot_ws/install/tatekbot_description/share/tatekbot_description/models/tatekbot/config/controllers.yaml</parameters>
+  </plugin>
+    
+    
+    
+    
+  </model>
+</sdf>
